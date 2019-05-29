@@ -1,5 +1,7 @@
 # CircularBuffer
 
+[![Build Status](https://travis-ci.org/miguelmoraperea/CircularBuffer.svg?branch=master)](https://travis-ci.org/miguelmoraperea/CircularBuffer)
+
 #### Who would use this?
 This project is designed for embedded software engineers working in C language.
 
