@@ -44,7 +44,7 @@ all: CircularBuffer.exe
 CircularBuffer.exe: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Cygwin C++ Linker'
-	g++ -L"H:\Users\Malone_Lab\Desktop\workspaces\git\CircularBuffer\CppUTest\lib" -o "CircularBuffer.exe" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++ -L"$(dir $(abspath $(CURDIR)))CppUTest/lib}" -L"H:\Users\Malone_Lab\Desktop\workspaces\git\CircularBuffer\CppUTest\lib" -o "CircularBuffer.exe" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

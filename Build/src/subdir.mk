@@ -4,20 +4,23 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../src/CircularBuffer.c 
+../src/CircularBuffer.c \
+../src/main.c 
 
 OBJS += \
-./src/CircularBuffer.o 
+./src/CircularBuffer.o \
+./src/main.o 
 
 C_DEPS += \
-./src/CircularBuffer.d 
+./src/CircularBuffer.d \
+./src/main.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
 src/%.o: ../src/%.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: Cygwin C Compiler'
-	gcc -I"H:\Users\Malone_Lab\Desktop\workspaces\git\CircularBuffer\inc" -I"H:\Users\Malone_Lab\Desktop\workspaces\git\CircularBuffer\CppUTest\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
+	gcc -I"$(dir $(abspath $(CURDIR)))inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
