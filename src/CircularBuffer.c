@@ -49,7 +49,6 @@ static int IsPowerOfTwo(int value)
 
 result_t CircularBuffer_Init(int size)
 {
-
 	if (!IsPowerOfTwo(size))
 	{
 		return BUFFER_ERROR;
@@ -113,7 +112,6 @@ int CircularBuffer_GetDataLength(void)
 
 result_t CircularBuffer_Write(char data)
 {
-
 	if(CircularBuffer_GetDataLength() == (cb.size - 1))
 	{
 		return BUFFER_FULL;
@@ -127,7 +125,6 @@ result_t CircularBuffer_Write(char data)
 
 result_t CircularBuffer_Read(char *data)
 {
-
 	if(CircularBuffer_GetDataLength() == 0)
 	{
 		return BUFFER_EMPTY;
