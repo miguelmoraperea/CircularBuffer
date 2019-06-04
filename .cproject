@@ -269,7 +269,7 @@
                                     									
                                     <listOptionValue builtIn="false" value="&quot;$(dir $(abspath $(CURDIR)))inc&quot;"/>
                                     									
-                                    <listOptionValue builtIn="false" value="&quot;$(dir $(abspath $(CURDIR)))lib/cpputest/include}&quot;"/>
+                                    <listOptionValue builtIn="false" value="&quot;$(dir $(abspath $(CURDIR)))lib/cpputest/include&quot;"/>
                                     								
                                 </option>
                                 								
