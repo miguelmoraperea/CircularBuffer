@@ -2,6 +2,18 @@ language: c
 
 compiler: gcc
 
+env:
+  global:
+    - CODECOV_TOKEN="81e23668-98b8-4f90-8a7f-6b75cc935766"  
+
 script:
-  - cd Build
-  - make
+   - cd Build
+   - make
+   - ./CircularBuffer.exe
+   - cd ..
+   - cd TDD
+   - make
+   - ./CircularBuffer.exe
+  
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
