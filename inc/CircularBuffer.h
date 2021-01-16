@@ -12,7 +12,10 @@
 #define CIRCULAR_BUFFER_H
 
 typedef enum {
-	BUFFER_SUCCESS, BUFFER_ERROR, BUFFER_EMPTY, BUFFER_FULL
+    BUFFER_SUCCESS,
+    BUFFER_ERROR,
+    BUFFER_EMPTY,
+    BUFFER_FULL
 } result_t;
 
 result_t CircularBuffer_Init(int size);

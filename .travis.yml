@@ -2,18 +2,22 @@ language: c
 
 compiler: gcc
 
+git:
+  submodules: true
+
 env:
   global:
-    - CODECOV_TOKEN="81e23668-98b8-4f90-8a7f-6b75cc935766"  
+    - CODECOV_TOKEN="81e23668-98b8-4f90-8a7f-6b75cc935766"
+
+before_script:
+    - cd lib/cpputest
+    - autoreconf . -i
+    - ./configure
+    - make tdd
 
 script:
-   - cd Build
-   - make
-   - ./CircularBuffer.exe
-   - cd ..
-   - cd TDD
-   - make
-   - ./CircularBuffer.exe
-  
+    - cd ../..
+    - make
+
 after_success:
   - bash <(curl -s https://codecov.io/bash)
